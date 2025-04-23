@@ -19,7 +19,10 @@ for message in st.session_state.messages:
 
 # Input do usuário
 if prompt := st.chat_input('What is up?'):
-    instructions = "Responda as perguntas do usuário de maneira informal"
+    instructions = """Você é um secretário de uma clínica médica. Essa clínica atende várias especialidades médicas.
+    Interaja com o usuário e responda normalmente as perguntas que ele fizer. Quando ele quiser marcar uma consulta, em ordem, faça as seguintes perguntas: 1. Qual o plano de saúde que ele possúi. 2. Melhor data e horário para a consulta. 
+    Se o plano de saúde for o Notredame, informe ao usuário que não atendemos esse plano.
+    """
 
     # Adiciona mensagem do usuário
     st.session_state.messages.append({"role": "user", "content": prompt})
